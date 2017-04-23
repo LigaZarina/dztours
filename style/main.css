@@ -1,0 +1,641 @@
+/* --- Base styles */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #f7f7f7;
+	color: #283037;
+	font-family: Georgia, 'Times New Roman', serif;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+aside {
+	background-color: rgb(173, 122, 53);
+	box-shadow: 10px 0px 9px -6px rgba(0, 0, 0, 0.52);
+	height: 100vh;
+	position: fixed;
+	min-width: 200px;
+	max-width: 260px;
+	width: 16vw;
+	z-index: 99;
+}
+
+nav {
+	padding: 40px 10px 0;
+	text-align: center;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+#logo {
+	width: 130%;
+	margin-left: -10px;
+}
+
+.menu {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+main {
+	margin-left: 16vw;
+	width: 84vw;
+	text-align: center;
+}
+
+h2 {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 4.236rem;
+	font-weight: 300;
+	margin-bottom: 0px;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+p {
+	font-size: 1rem;
+	line-height: 1.7;
+}
+
+a {
+	text-decoration: none;
+	color: #283037;
+}
+
+nav a {
+	color: #fff;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.1em;
+	padding: 9px;
+	text-transform: uppercase;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+
+nav a:hover {
+	color: #000;
+	-webkit-transition: ease-in 0.3s;
+	-webkit-transition: ease-in 0.5s;
+	transition: ease-in 0.5s;
+}
+
+
+/*  burger navigation icon with cross effects*/
+
+#burger-container {
+	position: relative;
+	display: none;
+	margin-top: 10px;
+	float: right;
+}
+
+#burger {
+	cursor: pointer;
+	display: block;
+}
+
+#burger span {
+	background: #fff;
+	display: block;
+	height: 3px;
+	width: 50px;
+	margin-bottom: 10px;
+	position: relative;
+	-webkit-transition: .4s ease-in-out;
+	transition: .4s ease-in-out;
+}
+
+
+/* open class - toggle using jquery*/
+
+#burger-container.open span:nth-child(2) {
+	width: 0;
+	/* collapse 2nd span*/
+	opacity: 0;
+}
+
+
+/*makes the 1st and 3th span cross over each other*/
+
+#burger-container.open span:nth-child(3) {
+	-webkit-transform: rotate(45deg);
+	transform: rotate(45deg);
+	top: -10px;
+}
+
+#burger-container.open span:nth-child(1) {
+	-webkit-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	top: 15px;
+}
+
+
+/* --- Landing page */
+
+.landing {
+	background-color: rgba(255, 255, 255, 0.8);
+	height: 100vh;
+	padding: 1px;
+	/*the padding allows the background colour overlay on the background photo, otherwise it doesn't cover the whole thing */
+}
+
+.banner {
+	background-image: url(img/mng_vesture.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.head_lockup {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	-ms-grid-row-align: center;
+	align-items: center;
+}
+
+.head_lockup h1 {
+	font-family: 'Times New Roman', serif;
+	font-size: 4.236rem;
+	letter-spacing: 0.05em;
+	margin-bottom: -10px;
+	text-transform: uppercase;
+}
+
+.head_lockup {
+	margin-top: 23vh;
+}
+
+.tagline {
+	color: #ad7a35;
+}
+
+
+/* --- About Page */
+
+.about_me,
+.book {
+	border-bottom: 2px solid rgb(173, 122, 53);
+	max-width: 600px;
+	margin: auto;
+	padding-bottom: 25px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.book,
+.reviews {
+	padding-top: 25px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.me {
+	width: 100%;
+	margin: 20px 0px;
+}
+
+.book_cover {
+	height: 300px;
+	width: 150px;
+	padding: 10px;
+	margin: auto;
+}
+
+.book {
+	max-width: 650px;
+}
+
+.book p {
+	padding: 0 25px;
+}
+
+.reviews {
+	padding-bottom: 50px;
+}
+
+.review {
+	padding: 0px 20px 20px 20px;
+	width: 40%;
+	max-width: 450px;
+}
+
+.review a {
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.05em;
+	font-weight: 600;
+}
+
+.review a:hover {
+	color: rgb(173, 122, 53);
+	-webkit-transition: ease-in 0.3s;
+	-webkit-transition: ease-in 0.5s;
+	transition: ease-in 0.5s;
+}
+
+.emp {
+	font-weight: 600;
+}
+
+q {
+	font-style: italic;
+}
+
+
+/* --- Tour Page */
+
+#tours_intro {
+	margin: 100px auto;
+	max-width: 750px;
+	border-top: 3px solid #000;
+	border-bottom: 2px solid #000;
+	padding: 10px 20px;
+	text-align: left;
+}
+
+.tour_wrapper {
+	max-width: 960px;
+	margin: 0 auto 100px;
+}
+
+.tour_box {
+	overflow: hidden;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	margin: 20px;
+	-webkit-transition: all .9s ease-in;
+	transition: all .9s ease-in;
+	box-shadow: 18px 18px 5px -15px rgba(0, 0, 0, 0.23);
+}
+
+.tour_box:nth-child(2n+2) {
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: reverse;
+	-ms-flex-direction: row-reverse;
+	flex-direction: row-reverse;
+}
+
+.tour_banner {
+	overflow: hidden;
+	min-width: 50%;
+}
+
+.tour_name {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-transform: scale(1.2);
+	transform: scale(1.2);
+	height: 100%;
+	width: 100%;
+	-webkit-transition: all .5s;
+	transition: all .5s;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+}
+
+.tour_name a {
+	font-size: 1.2rem;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: .4em;
+	overflow: hidden;
+	text-transform: uppercase;
+	margin: auto;
+	color: #fff;
+	border: 2px solid;
+	text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.6);
+	padding: 5px;
+	font-weight: 900;
+	cursor: default;
+}
+
+.tour_name:hover a {
+	opacity: 0;
+}
+
+.tour_name:hover {
+	-webkit-transform: scale(1);
+	transform: scale(1);
+}
+
+.tour_description {
+	background-color: #fff;
+	padding: 15px;
+}
+
+
+/*importing the tour bg pic*/
+
+.old_town {
+	background-image: -webkit-linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/vecriga.jpg);
+	background-image: linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/vecriga.jpg);
+}
+
+.old_town:hover {
+	background-image: url(img/tours/vecriga.jpg);
+}
+
+.art_neuveau {
+	background-image: -webkit-linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/art_nouveau.jpg);
+	background-image: linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/art_nouveau.jpg);
+}
+
+.art_neuveau:hover {
+	background-image: url(img/tours/art_nouveau.jpg);
+}
+
+.riga {
+	background-image: -webkit-linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/riga.jpg);
+	background-image: linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/riga.jpg);
+}
+
+.riga:hover {
+	background-image: url(img/tours/riga.jpg);
+}
+
+.open_air {
+	background-image: -webkit-linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/brivdabas.jpg);
+	background-image: linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/brivdabas.jpg);
+}
+
+.open_air:hover {
+	background-image: url(img/tours/brivdabas.jpg);
+}
+
+.jurmala {
+	background-image: -webkit-linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/open_air_museum.jpg);
+	background-image: linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/open_air_museum.jpg);
+}
+
+.jurmala:hover {
+	background-image: url(img/tours/open_air_museum.jpg);
+}
+
+.rundale {
+	background-image: -webkit-linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/rundales_palace.jpg);
+	background-image: linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/rundales_palace.jpg);
+}
+
+.rundale:hover {
+	background-image: url(img/tours/rundales_palace.jpg);
+}
+
+.gauja {
+	background-image: -webkit-linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/gauja.jpg);
+	background-image: linear-gradient(rgba(65, 65, 65, 0.9), rgba(65, 65, 65, 0.8)), url(img/tours/gauja.jpg);
+}
+
+.gauja:hover {
+	background-image: url(img/tours/gauja.jpg);
+}
+
+
+/* --- FAQ Page */
+
+ul {
+	margin: 60px auto;
+	max-width: 600px;
+	text-align: left;
+	padding-right: 20px;
+}
+
+.faq_container {
+	list-style-type: none;
+	padding-top: 20px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid #ad7a35;
+}
+
+.faq_container:last-child {
+	margin-bottom: 100px;
+}
+
+.faq_collapse {
+	line-height: 1em;
+	color: rgba(173, 122, 53, 0.5);
+	font-family: sans-serif;
+	font-weight: 700;
+	float: left;
+	/*without the float the animation won't happen*/
+	padding-right: 0.3em;
+	-webkit-transition: all 200ms;
+	transition: all 200ms;
+}
+
+.faq-expand {
+	transform: rotate(-45deg);
+	transform-origin: 50% 50%;
+	-ms-transform: rotate(-45deg);
+	-ms-transform-origin: 50% 50%;
+	-webkit-transform: rotate(-45deg);
+	-webkit-transform-origin: 50% 50%;
+	-webkit-transition: all 200ms;
+	transition: all 200ms;
+}
+
+.faq_question {
+	font-size: 1.3rem;
+	font-style: italic;
+}
+
+.faq_answer {
+	display: none;
+}
+
+.faq_answer p {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.faq_answer a {
+	color: #ad7a35;
+}
+
+.faq_answer a:hover {
+	text-decoration: underline;
+}
+
+
+/* --- Contact Page */
+
+.contact {
+	height: 100vh;
+}
+
+.contact_info {
+	text-align: center;
+}
+
+.contact_info h2 {
+	margin-top: 70px;
+}
+
+.contact_lockup {
+	margin: 50px;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+}
+
+.social_lockup {
+	width: 200px;
+	height: 150px;
+	margin: 20px;
+	box-shadow: 18px 18px 5px -15px rgba(0, 0, 0, 0.23);
+	padding-top: 35px;
+	background-color: #fff;
+}
+
+.linkedin:hover {
+	border: 1px solid #ad7a35;
+	-webkit-transition: linear 300ms;
+	transition: linear 300ms;
+}
+
+
+/* --- Media queries */
+
+@media (min-width: 1680px) {
+	main {
+		margin-left: 250px;
+	}
+	.banner {
+		min-width: 100vw;
+	}
+}
+
+@media (max-width: 1200px) {
+	#tours_intro {
+		max-width: 600px;
+	}
+	.tour_box {
+		display: block;
+		max-width: 600px;
+		margin: 20px auto;
+	}
+	.tour_banner {
+		height: 300px;
+	}
+}
+
+@media (max-width: 1000px) {
+	main {
+		margin-top: 0px;
+		width: 100vw;
+		margin-left: 0px;
+	}
+	aside {
+		min-width: 100vw;
+		height: 100px;
+		box-shadow: 0px 10px 9px -6px rgba(0, 0, 0, 0.52);
+	}
+	nav {
+		text-align: right;
+		padding: 10px;
+		-webkit-box-orient: horizontal;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: row;
+		flex-direction: row;
+		-webkit-box-pack: justify;
+		-ms-flex-pack: justify;
+		justify-content: space-between;
+	}
+	#burger-container {
+		display: block;
+		margin: 30px;
+		float: right;
+	}
+	.menu {
+		visibility: hidden;
+		display: block;
+		position: absolute;
+		margin-top: 67px;
+		background-color: rgb(173, 122, 53);
+		width: 100vw;
+		left: 0;
+		overflow: hidden;
+	}
+	.menu a {
+		display: block;
+		padding: 25px 25px 15px 0px;
+		border-bottom: 1px solid black;
+	}
+	.show {
+		visibility: visible;
+	}
+	#logo {
+		width: 150px;
+		float: left;
+		margin: 0px;
+	}
+	h2 {
+		margin-top: 150px;
+	}
+	.contact_lockup {
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 740px) {
+	h2 {
+		font-size: 3rem;
+	}
+	p {
+		font-size: 14px;
+	}
+	.book {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: reverse;
+		-ms-flex-direction: column-reverse;
+		flex-direction: column-reverse;
+	}
+	.book_cover {
+		margin: auto;
+	}
+	.reviews {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+	.review {
+		width: 100%;
+		margin: 0 auto;
+		padding: 20px;
+	}
+}
